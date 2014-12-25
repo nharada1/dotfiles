@@ -1,4 +1,51 @@
-syntax on
+set nocompatible
+filetype off
 
-" Wrap gitcommit file types at the appropriate length
-filetype indent plugin on
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""" Vundle and Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'ervandew/supertab'
+Plugin 'scrooloose/nerdtree'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+filetype on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""" Personal Preferences 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Tabs are spaces, duh
+set tabstop=4 shiftwidth=4 expandtab
+
+" Ruler
+set ruler
+set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
+
+" Completion in menu
+set wildmenu
+
+" Use system clipboard
+set clipboard=unnamedplus
+
+" F5 Executes Python
+nnoremap <silent> <F5> :!clear;python3 %<CR>
+" F6 Debugs Python
+nnoremap <silent> <F6> :!clear;python3 -m pdb %<CR>
+
+" Change line wrapping
+nmap j gj
+nmap k gk
+
+" NerdTree open
+map <C-n> :NERDTreeToggle<CR>
+map <C-w> :tabc<CR>
+
+" Use ctrl-c for escape
+cnoremap <C-c> <Esc>

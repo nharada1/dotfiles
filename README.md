@@ -1,6 +1,8 @@
-# holman does dotfiles
+# nharada does dotfiles
 
 ## dotfiles
+
+Original repo from Zach Holman.
 
 Your dotfiles are how you personalize your system. These are mine.
 
