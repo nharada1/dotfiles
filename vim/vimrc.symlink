@@ -10,7 +10,9 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'ervandew/supertab'
+Plugin 'scrooloose/syntastic'
+"Plugin 'idbrii/AsyncCommand'
+"Plugin 'stgpetrovic/syntastic-async'
 Plugin 'scrooloose/nerdtree'
 
 " All of your Plugins must be added before the following line
@@ -22,11 +24,14 @@ filetype on
 """"""""" Personal Preferences 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs are spaces, duh
-set tabstop=4 shiftwidth=4 expandtab
+set tabstop=4 
+set shiftwidth=4 
+set expandtab
+set softtabstop=4
 
-" Ruler
+" Ruler and linenos
+set number
 set ruler
-set rulerformat=%20(%2*%<%f%=\ %m%r\ %3l\ %c\ %p%%%)
 
 " Completion in menu
 set wildmenu
@@ -47,5 +52,17 @@ nmap k gk
 map <C-n> :NERDTreeToggle<CR>
 map <C-w> :tabc<CR>
 
-" Use ctrl-c for escape
-cnoremap <C-c> <Esc>
+" Syntastic
+set statusline+=%#warningsmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_signs = 1
+let g:syntastic_python_python_exec = 'python3'
+
+" Use jk for esc
+imap ii <Esc>
