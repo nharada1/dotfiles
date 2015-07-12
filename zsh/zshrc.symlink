@@ -1,10 +1,6 @@
 # shortcut to this dotfiles path is $ZSH
 export ZSHC=$HOME/.dotfiles
 
-# virtualenvwrapper home
-export WORKON_HOME=$HOME/Envs
-source /usr/local/bin/virtualenvwrapper.sh
-
 # your project folder that we can `c [tab]` to
 export PROJECTS=~/Code
 

@@ -32,7 +32,7 @@ bare_minimums () {
 
     # Install dotfiles
     git clone https://github.com/nharada1/dotfiles.git ~/.dotfiles
-    bash ~/.dotfiles/scripts/bootstrap
+    bash ~/.dotfiles/script/bootstrap
 }
 
 gnome_machine () {
@@ -61,6 +61,11 @@ scikit_dev_machine () {
 
     # Python2 packages
     sudo apt-get install -y python-numpy python-scipy python-nose
+}
+
+python_dev_machine() {
+    # Python3
+    sudo apt-get install -y python3 python3-pip
 }
 
 michart_machine () {
