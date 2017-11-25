@@ -56,3 +56,12 @@ source $ZSH/oh-my-zsh.sh
 if [ -n "$VIRTUAL_ENV" ]; then
     source "$VIRTUAL_ENV/bin/activate"
 fi
+
+export EIGEN_ROOT=~/Code/eigen3
+export BOOST_ROOT=~/Code/boost163
+export WORKON_HOME=~/Envs
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+export CUDA_HOME=/usr/local/cuda
+source /usr/local/bin/virtualenvwrapper.sh
