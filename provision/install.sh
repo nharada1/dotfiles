@@ -11,8 +11,11 @@ bare_minimums () {
     sudo apt update -y
     sudo apt upgrade -y
 
-    # Install bare essentials
-    sudo apt install -y openssh-server default-jre 
+    # Install other packages for management
+    sudo apt install -y exfat-fuse exfat-utils
+
+    # Install other utlities
+    sudo apt install -y tree ncdu wget awscli
 
     # Install tmux
     sudo apt install -y tmux
@@ -26,18 +29,9 @@ bare_minimums () {
     sudo apt install -y zsh
     wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 
-    # Install vim/vundle
-    sudo apt install -y vim
-    git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
     # Install dotfiles
     git clone https://github.com/nharada1/dotfiles.git ~/.dotfiles
     bash ~/.dotfiles/script/bootstrap
-}
-
-dev() {
-    # Build tools
-    sudo apt install -y build-essential  
 
     # Augment tmux with information console
     sudo apt install -y cmake
@@ -47,25 +41,12 @@ dev() {
     make
     sudo make install
     cd -
+
 }
 
-ml() {
-    # Python3
-    sudo apt install -y python3 python3-numpy python3-scipy python3-nose
-
-    # Python2 packages
-    sudo apt install -y python-numpy python-scipy python-nose
-}
-
-desktop() {
-    # Update the sources list and add the GPG keys for the non-free PPAs
-    curl https://repogen.simplylinux.ch/txt/artful/sources_64c0fd6a1e3342c3239f00b4d6818507d73a88ec.txt | sudo tee /etc/apt/sources.list
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 6A68F637
-    sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys EEA14886
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D2C19886
-
-    # Update the whole thing
-    sudo apt update
+dev() {
+    # Build tools
+    sudo apt install -y build-essential  
 }
 
 # Run install, extras based on command line arguments

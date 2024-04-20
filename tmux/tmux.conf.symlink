@@ -8,7 +8,7 @@ set -g status-right '#[fg=green, bg=black] #(tmux-mem-cpu-load --interval 1) #[f
 
 # default statusbar colors
 set -g status-fg white
-#set -g status-bg default
+set -g status-bg color22
 
 # use ZSH
 set-option -g default-shell /bin/zsh
